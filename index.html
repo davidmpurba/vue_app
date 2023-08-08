@@ -6,16 +6,19 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <h1>Hello guys :)</h1>
+    <h1>ReadBooks -.-</h1>
 
     <div id="app">
 
-        <p>{{ tittle }} {{episode}} </p>
+        <h2>{{ tittle }} </h2>
+        <h4>Episode: {{ episode }}</h4>
         
-        <button @click="episode++"> Next episode</button>
-        <button @click="episode--"> Previous episode</button>
+        <p> {{getResult(episode)}} </p>
 
-        <button @click="changeTittle('Bleach')"> Change Tittle</button>
+        <button @click="nextEpisode"> Next episode</button>
+        <button @click="previousEpisode"> Previous episode</button>
+
+        <!-- <button @click="changeTittle('Bleach')"> Change Tittle</button> -->
 
     </div>
 
