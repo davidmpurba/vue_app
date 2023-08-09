@@ -1,10 +1,22 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Vue js</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 200px;
+            text-align: center;
+            background: grey;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
+
 <body>
     <h1>ReadBooks -.-</h1>
 
@@ -12,16 +24,21 @@
 
         <h2>{{ tittle }} </h2>
         <h4>Episode: {{ episode }}</h4>
-        
+
         <p> {{getResult(episode)}} </p>
 
         <button @click="nextEpisode"> Next episode</button>
         <button @click="previousEpisode"> Previous episode</button>
 
-        <!-- <button @click="changeTittle('Bleach')"> Change Tittle</button> -->
+        <h1>Mouse Event</h1>
+        <div class="box" @mouseover="handleEvent">Mouseover </div>
+        <div class="box" @mouseleave="handleEvent">Mouseleave </div>
+        <div class="box" @dblclick="handleEvent">Double click </div>
+        <div class="box" @mousemove="handleMousePosition">Mouse Position {{ x }} {{ y }}</div>
 
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>
