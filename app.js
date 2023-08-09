@@ -8,9 +8,9 @@ const app = Vue.createApp({
             y: 0,
             showBooks: false,
             books: [
-                { tittle: 'Morgan Le Fay', author: 'James o' },
-                { tittle: 'Masked Man', author: 'Lopes azi' },
-                { tittle: 'Paradise hall', author: 'Jackes sar' },
+                { tittle: 'Morgan Le Fay', author: 'James o', img: 'assets/emiya.jpg' },
+                { tittle: 'Masked Man', author: 'Lopes azi', img: 'assets/jeane.jpg' },
+                { tittle: 'Paradise hall', author: 'Jackes sar', img: 'assets/OIP.jfif' },
             ]
         }
     },

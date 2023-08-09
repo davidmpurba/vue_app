@@ -20,9 +20,20 @@
             align-items: center;
         }
 
+        .column {
+            flex: 2;
+            padding: 10px;
+        }
+
         .item {
             margin: 10px;
-            border: 1px solid #ccc;
+        }
+
+        .image {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -53,9 +64,12 @@
         </div>
         <div v-if="showBooks">
             <ul>
-                <li v-for="book in books">
-                    <h3>{{ book.tittle }}</h3>
-                    <p>author : {{ book.author }}</p>
+                <li class="row" v-for="book in books">
+                    <img class="image" :src="book.img" alt="">
+                    <div class="column">
+                        <h3>{{ book.tittle }}</h3>
+                        <p>author : {{ book.author }}</p>
+                    </div>
                 </li>
             </ul>
         </div>
