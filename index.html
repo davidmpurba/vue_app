@@ -14,6 +14,16 @@
             margin: 20px;
             display: inline-block;
         }
+
+        .row {
+            display: flex;
+            align-items: center;
+        }
+
+        .item {
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 
@@ -27,8 +37,8 @@
 
         <p> {{getResult(episode)}} </p>
 
-        <button @click="nextEpisode"> Next episode</button>
-        <button @click="previousEpisode"> Previous episode</button>
+        <button class="item" @click="nextEpisode"> Next episode</button>
+        <button class="item" @click="previousEpisode"> Previous episode</button>
 
         <h1>Mouse Event</h1>
         <div class="box" @mouseover="handleEvent">Mouseover </div>
@@ -36,8 +46,22 @@
         <div class="box" @dblclick="handleEvent">Double click </div>
         <div class="box" @mousemove="handleMousePosition">Mouse Position {{ x }} {{ y }}</div>
 
-    </div>
 
+        <div class="row">
+            <h2>Other Book</h2>
+            <button class="item" @click="toggleShowBooks">Show Book</button>
+        </div>
+        <div v-if="showBooks">
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{ book.tittle }}</h3>
+                    <p>author : {{ book.author }}</p>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
     <script src="app.js"></script>
 </body>
 

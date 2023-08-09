@@ -6,6 +6,12 @@ const app = Vue.createApp({
             event: 'event',
             x: 0,
             y: 0,
+            showBooks: false,
+            books: [
+                { tittle: 'Morgan Le Fay', author: 'James o' },
+                { tittle: 'Masked Man', author: 'Lopes azi' },
+                { tittle: 'Paradise hall', author: 'Jackes sar' },
+            ]
         }
     },
     methods: {
@@ -18,7 +24,6 @@ const app = Vue.createApp({
                 return 'COMING SOON';
             }
         },
-
         nextEpisode() {
             this.episode++
         },
@@ -33,8 +38,11 @@ const app = Vue.createApp({
             }
         },
         handleMousePosition(e) {
-           this.x = e.offsetX
-           this.y = e.offsetY
+            this.x = e.offsetX
+            this.y = e.offsetY
+        },
+        toggleShowBooks() {
+            this.showBooks = !this.showBooks
         }
     }
 })
